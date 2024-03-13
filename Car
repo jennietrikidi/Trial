@@ -1,0 +1,56 @@
+public class Car {
+    private String module;
+    private int carNumber;
+    private int year;
+    private String color;
+public Car(String module, int carNumber, int year,String color){
+    this.module=module;
+    this.carNumber=carNumber;
+    this.year=year;
+    this.color=color;
+}public Car(){
+        this.module=null;
+        this.carNumber=0;
+        this.year=0;
+        this.color=null;
+    }
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(int carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public void setModule(String module) {
+        this.module = module;
+    }
+
+    @Override
+    public String toString() {
+        return "module: " + module + "\n" +
+                "carNumber: " + carNumber +
+                "\n"+"year: " + year +"\n"+
+                "color:" + color;
+    }
+}
