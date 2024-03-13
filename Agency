@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Agency {
+    private Costumer[] arrC;
+    private Agent[] arrA=new Agent[20];
+    private Car[] arrCar;
+    public Agency(){
+        arrC=new Costumer[0];
+        arrA =new Agent[0];
+        arrCar=new Car[2];
+    }
+
+    public Agent[] getArrA() {
+        return arrA;
+    }
+
+    public Car[] getArrCar() {
+        return arrCar;
+    }
+
+    public void setArrCar(Car[] arrCar) {
+        this.arrCar = arrCar;
+    }
+
+    public void setArrA(Agent[] arrA) {
+        this.arrA = arrA;
+    }
+    public void findWhiteCars(){
+        for(int i=0;i<arrCar.length;i++){
+            if(arrCar[i].getColor().equals("white")){
+                System.out.println(arrCar[i].toString());
+            }
+        }
+    }
+    public void findReachest(){
+        int max=0, indexSecond=0;
+        int second=0, indexMax=0;
+        for (int i=0;i<arrA.length;i++){
+            if (max<arrA[i].getSalary()){
+               second=max;
+     max=arrA[i].getSalary();
+     indexMax=i;
+        }else if(second<arrA[i].getSalary()){
+                second=arrA[i].getSalary();
+                indexSecond=i;
+            }
+        }
+        System.out.println(arrA[indexMax]);
+        System.out.println(arrA[indexSecond]);
+    }
+}
