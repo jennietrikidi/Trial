@@ -1,0 +1,33 @@
+public abstract class Person {
+    private String name;
+    private String secName;
+public Person(String name, String secName){
+    this.name=name;
+    this.secName=secName;
+
+}
+    public String getSecName() {
+
+    return secName;
+    }
+
+    public void setSecName(String number) {
+
+    this.secName = number;
+    }
+
+    public String getName() {
+
+    return name;
+    }
+
+    public void setName(String name) {
+
+    this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + secName;
+    }
+}
