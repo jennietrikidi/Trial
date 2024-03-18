@@ -1,0 +1,45 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.LinkedTransferQueue;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+            System.out.println("Enter an even number for the array: ");
+            int amount = input.nextInt();
+            if (amount % 2 == 0) {
+                System.out.println("Enter a number: ");
+                int[] vec = new int[amount];
+                for (int i = 0; i < vec.length; i++) {
+                    vec[i] = input.nextInt();
+                }
+                boolean isPositive = isPositive(vec);
+                System.out.println(isPositive);
+            }
+    }
+public static boolean isPositive(int []vec){
+        int sumRight=0;
+        int sumLeft=0;
+        int count =0;
+    for(int i=0;i< vec.length;i++){
+        if(vec[i]<0){
+            return false;
+        }
+        if(i< vec.length/2) {
+            sumRight = sumRight + vec[i];
+        }else{
+            sumLeft=sumLeft+vec[i];
+        }
+        if(vec[0]==vec[i]){
+            count++;
+        }
+    }
+    if(count>2){
+        return false;
+    }
+    if(sumRight!=sumLeft){
+        return false;
+    }
+    return true;
+}
+} 
