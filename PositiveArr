@@ -1,0 +1,32 @@
+import jdk.jfr.EventFactory;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        int[] arrN = new int[20];
+        for (int i = 0; i < arrN.length; i++) {
+            arrN[i] = random.nextInt(-10,11);
+            System.out.print(arrN[i]+" ");
+        }
+        System.out.println();
+        createArr(arrN);
+    }
+    public static void createArr(int[]arrN){
+        int arrNewLength=0;
+        int [] positiveArr = new int[0];
+        for (int i=0;i<arrN.length;i++){
+         if(arrN[i]>0){
+             arrNewLength++;
+             positiveArr=new int[arrNewLength];
+             positiveArr[arrNewLength-1]=arrN[i];
+             System.out.print(positiveArr[arrNewLength-1]+" ");
+         }
+        }
+        System.out.println(arrNewLength);
+
+        }
+}
