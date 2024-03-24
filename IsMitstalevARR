@@ -1,0 +1,36 @@
+import jdk.jfr.EventFactory;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        int[] arrN = new int[51];
+        for (int i = 0; i < arrN.length; i++) {
+            arrN[i] = random.nextInt(100);
+            System.out.print(arrN[i]+" ");
+        }
+        System.out.println();
+        boolean isMitstalev = isMitstalev(arrN);
+        System.out.print(isMitstalev);
+    }
+    public static boolean isMitstalev(int[]arrN){
+        int j=2;
+        int k=3;
+        for (int i=0;i<arrN.length-2;i+=2){
+        if(arrN[i]>=arrN[j]){
+            return false;
+        }
+        j=j+2;
+        }for (int i=1;i<arrN.length-3;i+=2){
+            if(arrN[i]<=arrN[j]){
+                return false;
+            }
+            k=k+2;
+        }
+       return true;
+
+        }
+}
