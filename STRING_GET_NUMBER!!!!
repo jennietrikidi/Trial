@@ -1,0 +1,26 @@
+import jdk.jfr.EventFactory;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        String arr = "e1b2g3 j3i2k1";
+        newString(arr);
+           }
+
+           public static void newString(String arr){
+       for (int i=0;i<arr.length()-1;i+=2){
+           if(arr.charAt(i)==' '){
+               System.out.print(" ");
+               i--;
+           }else{
+               for (int j = 0;j < Integer.parseInt(arr.charAt(i+1)+""); j++){
+                   System.out.print(arr.charAt(i));
+               }
+           }
+       }
+           }
+}
