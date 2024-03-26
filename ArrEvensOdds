@@ -1,0 +1,51 @@
+import jdk.jfr.EventFactory;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        System.out.println("Enter numbers: ");
+        int []arr= new int[10];
+        for (int i=0;i<arr.length;i++){
+            arr[i]=input.nextInt();
+        }
+        evenOddArrays(arr);
+    }
+    public static void evenOddArrays(int[] arr){
+        int j=0;
+        int k=0;
+        for (int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                j++;
+            }else{
+                k++;
+            }
+        }
+        int[] odds=new int[k];
+        int[]evens=new int [j];
+        int a=0;
+                int b=0;
+        for (int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                evens[a]=arr[i];
+                a++;
+
+            }else{
+                odds[b]=arr[i];
+            b++;
+            }
+        }
+        for (int i=0;i<odds.length;i++){
+            System.out.print(odds[i]+"  ");
+        }
+        System.out.println();
+        for (int i=0;i<evens.length;i++){
+            System.out.print(evens[i]+"  ");
+        }
+    }
+}
