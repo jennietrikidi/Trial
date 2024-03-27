@@ -1,0 +1,58 @@
+import jdk.jfr.EventFactory;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+     int source=12345;
+     int target=11345;
+     boolean isPermutation=isPermutation(source,target);
+     System.out.println(isPermutation);
+    }
+
+    public static boolean isPermutation(int source,int target){
+      int countSource = 1;
+      int countTarget=1;
+      int countCheck=0;
+      int copieSource=source;
+      int copieTarget=target;
+      boolean isPermutation=true;
+while (source/10!=0){
+    countSource++;
+    source=source/10;
+}while (target/10!=0){
+            countTarget++;
+            target=target/10;
+        }
+if(countSource!=countTarget){
+   return !isPermutation;
+}else{
+    int[]sourceArr=new int[countSource];
+    int[]targetArr=new int[countTarget];
+    for (int i=0;i<sourceArr.length;i++){
+        sourceArr[i]=copieSource%10;
+        targetArr[i]=copieTarget%10;
+        copieTarget=copieTarget/10;
+        copieSource=copieSource/10;
+    }for (int i=0;i< sourceArr.length;i++){
+        for (int j=0;j<sourceArr.length;j++){
+            if(sourceArr[i]==targetArr[j]){
+                countCheck++;
+                break;
+            }
+        }
+    }if(countCheck!=sourceArr.length){
+        return !isPermutation;
+    }else{
+        return isPermutation;
+    }
+
+
+}
+    }
+}
